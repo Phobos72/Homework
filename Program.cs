@@ -1,63 +1,50 @@
-﻿//  1 задание
-Console.WriteLine("Input first number");
-int a =Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Input second number");
-int b =Convert.ToInt32(Console.ReadLine());
+﻿
+// Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
-if (a<b)
+int deletenumber (int num) 
 {
-    Console.WriteLine($"max={b}");
+
+    int ed = num / 10;
+    int sum = ed % 10;
+    return sum;
 }
-else
+int randomnum = new Random().Next(100,1000);
+Console.WriteLine(randomnum);
+int result = deletenumber (randomnum);
+Console.WriteLine(result);
+
+
+// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+int thirdnum(int num)
 {
-    Console.WriteLine($"max={a}");
+    int sum = num % 10;
+    return sum;
+
 }
-
-//  2 задание
-Console.WriteLine("Input first number");
-int a =Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Input second number");
-int b =Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Input third number");
-int c =Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите трёхзначное число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(thirdnum(num));
 
 
-if (a>b) 
+// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
-if (a>c) Console.WriteLine($"max={a}");
-else 
+
+int week(int num)
 {
-    Console.WriteLine($"max={c}");
-}
-else
-{
-    if (b>c) Console.WriteLine($"max={b}");
+    if (num > 5)
+    {
+        Console.WriteLine($"{num} - да");
+        return num;
+    }
     else
     {
-        Console.WriteLine($"max={c}");
+        Console.WriteLine($"{num} - нет");
+        return num;
     }
+
 }
-// 3 задание
-Console.WriteLine("Input number");
-int a =Convert.ToInt32(Console.ReadLine());
 
-if (a % 2 ==1)
-  {
-
-    Console.WriteLine($"Число {a} нечётное");
-  }  
-else
-    {
-        Console.WriteLine($"Число {a} чётное");
-    }
-// 4 задание
-Console.WriteLine("Введите число N");
-int N = Convert.ToInt32(Console.ReadLine());
-
-int low = -N;
-
-while (low<=N)
-{
-Console.WriteLine($"{low}");
-low = low +1;
-}
+Console.WriteLine("Введите цифру от 1 до 7:");
+int num = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(week(num));
