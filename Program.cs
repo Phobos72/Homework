@@ -1,50 +1,38 @@
 ﻿
-// Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
 
-int deletenumber (int num) 
-{
+// 2, 4 -> 16
+// Console.WriteLine("введите число A");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("введите число B");
+// int b = Convert.ToInt32(Console.ReadLine());
+// int fact = a;
 
-    int ed = num / 10;
-    int sum = ed % 10;
-    return sum;
-}
-int randomnum = new Random().Next(100,1000);
-Console.WriteLine(randomnum);
-int result = deletenumber (randomnum);
-Console.WriteLine(result);
+// for (int i = 1; i < b; i++)
+// {
+// fact = fact * a;
+// }
+// Console.WriteLine("A в степени B равно: " + fact);
 
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+// 452 -> 11
 
-int thirdnum(int num)
-{
-    int sum = num % 10;
-    return sum;
+// 82 -> 10
 
-}
-Console.WriteLine("Введите трёхзначное число: ");
-int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(thirdnum(num));
+// 9012 -> 12
 
+// Console.WriteLine ("Введите число А: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// int sum = 0;
 
-// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-
-
-int week(int num)
-{
-    if (num > 5)
-    {
-        Console.WriteLine($"{num} - да");
-        return num;
-    }
-    else
-    {
-        Console.WriteLine($"{num} - нет");
-        return num;
-    }
-
-}
-
-Console.WriteLine("Введите цифру от 1 до 7:");
-int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(week(num));
+// while ( a>0 )
+// {
+//     int num = a % 10;
+//     a = a / 10;
+//     sum= sum + num;
+// }
+// Console.WriteLine("Сумма всех цифр в числе равна:" +sum);
+ 
+//  Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран. Вывод сделать отдельным методом.
