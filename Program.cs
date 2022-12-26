@@ -1,38 +1,73 @@
 ﻿
-// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-// 3, 5 -> 243 (3⁵)
+// Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
-// 2, 4 -> 16
-// Console.WriteLine("введите число A");
-// int a = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("введите число B");
-// int b = Convert.ToInt32(Console.ReadLine());
-// int fact = a;
+// 14212 -> нет
 
-// for (int i = 1; i < b; i++)
+// 12821 -> да
+
+// 23432 -> да
+
+// Console.WriteLine("Введите число: ");
+// string number = Console.ReadLine();
+// int lenght = number.Length;
+
+// if (lenght == 5)
 // {
-// fact = fact * a;
+//     if (number[0] == number[4] && number[1] == number[3])
+//     {
+//         Console.WriteLine($"{number} - Палиндром");
+//     }
+//     else
+//     {
+//         Console.WriteLine($"{number} - Не палиндром");
+//     }
 // }
-// Console.WriteLine("A в степени B равно: " + fact);
 
-// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
-// 452 -> 11
+// A (3,6,8); B (2,1,-7), -> 15.84
 
-// 82 -> 10
+// A (7,-5, 0); B (1,-1,9) -> 11.53
 
-// 9012 -> 12
+// Console.WriteLine ("Введите координату x1: ");
+// int x1 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine ("Введите координату y1: ");
+// int y1 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine ("Введите координату z1: ");
+// int z1 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine ("Введите координату x2: ");
+// int x2 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine ("Введите координату y2: ");
+// int y2 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine ("Введите координату z2: ");
+// int z2 = Convert.ToInt32(Console.ReadLine());
 
-// Console.WriteLine ("Введите число А: ");
-// int a = Convert.ToInt32(Console.ReadLine());
-// int sum = 0;
+// double k1 = x1 - x2;
+// double k2 = y1 - y2;
+// double k3 = z1 - z2;
+// double g =Math.Sqrt(k1*k1+k2*k2+k3*k3);
+// Console.WriteLine($"Длинна {g}");
 
-// while ( a>0 )
+
+
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
+
+
+// int N = tabl("Введите число N: ");
+
+// for (int i=1; i <= N; i++)
 // {
-//     int num = a % 10;
-//     a = a / 10;
-//     sum= sum + num;
+//     Console.Write($"{i*i*i}");
 // }
-// Console.WriteLine("Сумма всех цифр в числе равна:" +sum);
- 
-//  Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран. Вывод сделать отдельным методом.
+// int tabl(string tab)
+// {
+//     Console.Write(tab);
+//     return Convert.ToInt32(Console.ReadLine());
+// }
+
+
+
+
