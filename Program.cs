@@ -1,73 +1,161 @@
-﻿
-// Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+﻿//Задача 1. Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9, 9].
+// Найдите сумму отрицательных и положительных элементов массива.
 
-// 14212 -> нет
-
-// 12821 -> да
-
-// 23432 -> да
-
-// Console.WriteLine("Введите число: ");
-// string number = Console.ReadLine();
-// int lenght = number.Length;
-
-// if (lenght == 5)
+//Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6] сумма положительных чисел равна 29, сумма отрицательных равна -20.
+// int[] CreateRandomArray(int size, int minValue, int maxValue)
 // {
-//     if (number[0] == number[4] && number[1] == number[3])
+// int[] myArray = new int[size];
+// for (int i = 0; i < size; i++)
+// {
+// myArray[i] = new Random().Next(minValue, maxValue + 1);
+// }
+// return myArray;
+// }
+
+// void ShowArray(int[] array)
+// {
+// Console.WriteLine("Полученный массив ->:");
+// for (int i = 0; i < array.Length; i++)
+// {
+// Console.Write(array[i] + " ");
+// }
+// Console.WriteLine();
+// }
+
+// void FindMinMAxSum (int[] array)
+// {
+// int sumPositive = 0;
+// int sumNegative = 0;
+// for(int i = 0; i < array.Length; i++)
+// {
+// if(array[i] > 0) sumPositive += array[i];
+// else
+// sumNegative += array[i];
+// }
+// Console.WriteLine($"Сумма положительных элементов {sumPositive}, а отрицательных {sumNegative}");
+// }
+// Console.WriteLine("Введите размер массива:");
+// int lenght = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимально возможное значение элемента массива:");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимально возможное значение элемента массива:");
+// int max = Convert.ToInt32(Console.ReadLine());
+
+// int[] newArray = CreateRandomArray(lenght,min,max);
+
+// ShowArray(newArray);
+// FindMinMAxSum(newArray);
+
+
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+
+// [345, 897, 568, 234] -> 2
+
+// Console.WriteLine("Введите размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] numbers = new int[size];
+// ArrayRandomNumbers(numbers);
+// Console.WriteLine("Массив: ");
+// PrintArray(numbers);
+// int count = 0;
+
+// for (int i = 0; i < numbers.Length; i++)
+// if (numbers[i] % 2 == 0)
+// count++;
+
+// Console.WriteLine($"всего {numbers.Length} чисел, {count} из них чётные");
+
+// void ArrayRandomNumbers(int[] numbers)
+// {
+//     for(int j = 0; j < numbers.Length; j++)
 //     {
-//         Console.WriteLine($"{number} - Палиндром");
+//         numbers[j] = new Random().Next(100,1000);
 //     }
-//     else
+// }
+// void PrintArray(int[] numbers)
+// {
+//     Console.Write("[ ");
+//     for(int j = 0; j < numbers.Length; j++)
 //     {
-//         Console.WriteLine($"{number} - Не палиндром");
+//         Console.Write(numbers[j] + " ");
 //     }
+//     Console.Write("]");
+//     Console.WriteLine();
 // }
 
-// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+// // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
-// A (3,6,8); B (2,1,-7), -> 15.84
+// Console.WriteLine("Введите размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] numbers = new int[size];
+// RandomNumbers(numbers);
+// Console.WriteLine("Вот наш массив: ");
+// PrintArray(numbers);
+// int sum = 0;
 
-// A (7,-5, 0); B (1,-1,9) -> 11.53
+// for (int j = 0; j < numbers.Length; j+=2)
+//     sum = sum + numbers[j];
 
-// Console.WriteLine ("Введите координату x1: ");
-// int x1 = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine ("Введите координату y1: ");
-// int y1 = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine ("Введите координату z1: ");
-// int z1 = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine ("Введите координату x2: ");
-// int x2 = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine ("Введите координату y2: ");
-// int y2 = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine ("Введите координату z2: ");
-// int z2 = Convert.ToInt32(Console.ReadLine());
+//     Console.WriteLine($"всего {numbers.Length} чисел, сумма элементов на нечётных позициях = {sum}");
 
-// double k1 = x1 - x2;
-// double k2 = y1 - y2;
-// double k3 = z1 - z2;
-// double g =Math.Sqrt(k1*k1+k2*k2+k3*k3);
-// Console.WriteLine($"Длинна {g}");
-
-
-
-// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-
-// 3 -> 1, 8, 27
-// 5 -> 1, 8, 27, 64, 125
-
-
-// int N = tabl("Введите число N: ");
-
-// for (int i=1; i <= N; i++)
+// void RandomNumbers(int[] numbers)
 // {
-//     Console.Write($"{i*i*i}");
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             numbers[i] = new Random().Next(1,10);
+//         }
 // }
-// int tabl(string tab)
+// void PrintArray(int[] numbers)
 // {
-//     Console.Write(tab);
-//     return Convert.ToInt32(Console.ReadLine());
+//     Console.Write("[ ");
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             Console.Write(numbers[i] + " ");
+//         }
+//     Console.Write("]");
+//     Console.WriteLine();
 // }
 
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
+// Console.WriteLine("Введите размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+// double[] numbers = new double[size];
+// RandomNumbers(numbers);
+// Console.WriteLine("Вот наш массив: ");
+// PrintArray(numbers);
+// double min = Int32.MaxValue;
+// double max = Int32.MinValue;
 
+// for (int j = 0; j < numbers.Length; j++)
+// {
+//     if (numbers[j] > max)
+//         {
+//             max = numbers[j];
+//         }
+//     if (numbers[j] < min)
+//         {
+//             min = numbers[j];
+//         }
+// }
 
+// Console.WriteLine($"всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
+// Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
+
+// void RandomNumbers(double[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+//         }
+// }
+// void PrintArray(double[] numbers)
+// {
+//     Console.Write("[ ");
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             Console.Write(numbers[i] + " ");
+//         }
+//     Console.Write("]");
+//     Console.WriteLine();
+// }
