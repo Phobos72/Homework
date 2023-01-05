@@ -1,22 +1,87 @@
 ﻿
-// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// Задача 47. 
+// Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 
-// 0, 7, 8, -2, -2 -> 2
+// double[,] Create2DRandomArray(int rows, int columns)
+// {
+//     double[,] newArray = new double[rows, columns];
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < columns; j++)
+//         {
+//             newArray[i, j] = new Random().Next(-99,99)/10.0;
+//         }
+//     }
+//     return newArray;
+// }
 
-// 1, -7, 567, 89, 223-> 3
+// void Show2DArray(double[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// Console.Write("Введите количество строк ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов ");
+// int n = Convert.ToInt32(Console.ReadLine());
 
-// Задача 43. Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1 y = k2 * x + b2 значения b1, k1, b2 и k2 задаются пользователем.
+// double[,] myArray = Create2DRandomArray(m, n);
+// Show2DArray(myArray);
 
-// Console.WriteLine ("Введите значение b1: ");
-// double b1 = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine ("Введите значение k1: ");
-// double k1 = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine ("Введите значение b2: ");
-// double b2 = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine ("Введите значение k2: ");
-// double k2 = Convert.ToInt32(Console.ReadLine());
+//  Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает 
+//  значение этого элемента или же указание, что такого элемента нет.
+//  Во вводе первая цифра - номер строки, вторая - столбца. Цифры не больше 9.
+//  Например, задан массив:
+//  1 4 7 2
+//  5 9 2 3
+//  8 4 2 4
+//  17 -> такого числа в массиве нет
 
-// double x = (-b2 + b1)/(-k1 + k2);
-// double y = k2 * x + b2;
+// Console.Write("Введите количество строк ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов ");
+// int columns = Convert.ToInt32(Console.ReadLine());
+// int[,] num = new int[6, 8];
+// FillArray2D(num);
+// PrintArray2D(num);
+// if (rows < num.GetLength(0) && columns < num.GetLength(1))
+// Console.WriteLine(num[rows, columns]);
+// else 
+// Console.WriteLine($"{rows}{columns} -> такого числа в массиве нет");
+// void FillArray2D(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             array[i, j] = new Random().Next(1, 10);
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
-// Console.WriteLine($"две прямые пересекутся в точке с координатами X: {x}, Y: {y}");
+// void PrintArray2D(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
